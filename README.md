@@ -7,7 +7,7 @@ A zero-dependency, ultra-lightweight suite of intuitive `DateTime` extensions fo
 
 ---
 
-## ⚡ The Token-Saving Advantage (Before vs. After)
+## The Token-Saving Advantage (Before vs. After)
 
 ### 1. Relative Human Time
 
@@ -38,7 +38,8 @@ dueDate.daysRemaining(); // "3 days left"
 ---
 
 
-## 🚀 Key Features & Usage
+## Key Features & Usage
+
 
 ### Semantic Evaluation Flags
 ```dart
@@ -48,6 +49,7 @@ dateTime.isTomorrow;     // true/false
 dateTime.isThisWeek;     // true/false
 dateTime.isWeekend;      // true/false
 dateTime.isBusinessDay;  // true/false
+dateTime.isLastBusinessDayOfMonth; // true/false
 dateTime.isLeapYear;     // true/false
 dateTime.isFuture;       // true/false
 dateTime.isPast;         // true/false
@@ -132,7 +134,7 @@ dateTime.toLocalOrUtc();
 ---
 
 
-## 📦 Installation
+## Installation
 
 Add to your `pubspec.yaml`:
 ```yaml
@@ -147,18 +149,18 @@ import 'package:date_formatter_codespark/date_formatter_codespark.dart';
 
 ---
 
-## ✅ Zero Dependencies
+## Zero Dependencies
 
 This package has **no external dependencies**. It does not use `intl`, `timeago`, or any other third-party package. All date formatting, locale-aware month names, and weekday strings are handled via lean, hand-crafted lookup tables internally.
 
 ---
 
-## 🧭 Full API Reference
+## Full API Reference
 
 All extension methods are documented with concise doc comments and examples in the code. See [`lib/src/date_extensions.dart`](lib/src/date_extensions.dart) for the complete API surface.
 
 ---
 
-## 📄 License
+## License
 
 MIT License — see [LICENSE](LICENSE) for details.

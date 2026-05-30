@@ -11,6 +11,21 @@ import 'time_ago_constants.dart';
 /// import 'package:date_formatter_codespark/date_formatter_codespark.dart';
 /// ```
 extension DateFormatterExtension on DateTime {
+  /// Returns true if this date is the last business (weekday) day of the month.
+  ///
+  /// Handles all months, including leap years. A business day is Monday–Friday.
+  /// Example:
+  /// ```dart
+  /// DateTime(2026, 5, 29).isLastBusinessDayOfMonth; // true if 29 May 2026 is last weekday of May
+  /// ```
+  bool get isLastBusinessDayOfMonth {
+    if (weekday > DateTime.friday) return false; // Not a business day
+    DateTime next = this;
+    do {
+      next = next.add(const Duration(days: 1));
+    } while (next.weekday > DateTime.friday && next.month == month);
+    return next.month != month;
+  }
   // ─────────────────────────────────────────────────────────────────────────
   // SECTION 1 — Relative Time
   // ─────────────────────────────────────────────────────────────────────────
