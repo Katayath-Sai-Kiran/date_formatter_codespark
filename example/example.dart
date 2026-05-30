@@ -20,7 +20,8 @@ void main() {
   final friday = DateTime(2026, 5, 29); // Assume this is a Friday
   print('Add business day: ${friday.addBusinessDays(1)}'); // Skips to Monday
 
-  final lastBiz = DateTime(2026, 5, 31); // Suppose this is a weekday and last of month
+  final lastBiz =
+      DateTime(2026, 5, 31); // Suppose this is a weekday and last of month
   print('Is last business day: ${lastBiz.isLastBusinessDayOfMonth}');
 
   print('Is today: ${now.isToday}');
