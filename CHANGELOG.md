@@ -1,3 +1,14 @@
+## 1.2.0 — 2026-05-31
+
+* Added `isMorning`, `isAfternoon`, `isEvening`, `isNight` for time-of-day checks.
+* Added `isFirstBusinessDayOfMonth` for business calendar logic.
+* Added `nthWeekdayOfMonth(int weekday, int n)` for finding the nth weekday in a month.
+* Added `isLastOccurrenceOfWeekdayInMonth` for last weekday occurrence in month.
+* Added `daysSince(DateTime other)` for day difference.
+* Added `isPublicHoliday(List<DateTime> holidays)` for holiday checks.
+* Added `toFiscalYear({int fiscalYearStartMonth = 4})` for fiscal year calculation.
+* Added `nextBusinessDay` and `previousBusinessDay` for business day navigation.
+* Added `businessDaysUntil(DateTime other)` to count business days between two dates.
 
 ## 1.1.0 
 

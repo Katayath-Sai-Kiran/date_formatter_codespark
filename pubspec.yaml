@@ -2,8 +2,8 @@ name: date_formatter_codespark
 description: >
   A zero-dependency, ultra-lightweight Flutter package providing intuitive DateTime
   extensions.
-version: 1.1.0
-homepage: https://github.com/Katayath-Sai-Kiran/date_formatter_codespark
+version: 1.2.0
+homepage: https://ksaikiran.dev
 repository: https://github.com/Katayath-Sai-Kiran/date_formatter_codespark
 issue_tracker: https://github.com/Katayath-Sai-Kiran/date_formatter_codespark/issues
 

@@ -11,6 +11,113 @@ import 'time_ago_constants.dart';
 /// import 'package:date_formatter_codespark/date_formatter_codespark.dart';
 /// ```
 extension DateFormatterExtension on DateTime {
+  /// Returns true if the time is between 5:00 AM and 12:00 PM.
+  bool get isMorning => hour >= 5 && hour < 12;
+
+  /// Returns true if the time is between 12:00 PM and 5:00 PM.
+  bool get isAfternoon => hour >= 12 && hour < 17;
+
+  /// Returns true if the time is between 5:00 PM and 9:00 PM.
+  bool get isEvening => hour >= 17 && hour < 21;
+
+  /// Returns true if the time is between 9:00 PM and 5:00 AM.
+  bool get isNight => hour >= 21 || hour < 5;
+
+  /// Returns true if the date is the first business (weekday) day of the month.
+  bool get isFirstBusinessDayOfMonth {
+    if (!isBusinessDay) return false;
+    DateTime d = DateTime(year, month, 1);
+    while (!d.isBusinessDay) {
+      d = d.add(const Duration(days: 1));
+    }
+    return isSameDay(d);
+  }
+
+  /// Returns the date of the nth occurrence of a given weekday in the month (e.g., 2nd Friday).
+  /// Example: DateTime(2026, 5, 1).nthWeekdayOfMonth(DateTime.friday, 2) => 2026-05-08
+  DateTime nthWeekdayOfMonth(int weekday, int n) {
+    assert(weekday >= DateTime.monday && weekday <= DateTime.sunday);
+    assert(n > 0);
+    DateTime d = DateTime(year, month, 1);
+    int count = 0;
+    while (d.month == month) {
+      if (d.weekday == weekday) {
+        count++;
+        if (count == n) return d;
+      }
+      d = d.add(const Duration(days: 1));
+    }
+    throw ArgumentError('Not enough occurrences of weekday in month');
+  }
+
+  /// Returns true if this date is the last occurrence of its weekday in the month.
+  bool get isLastOccurrenceOfWeekdayInMonth {
+    DateTime d = add(const Duration(days: 7));
+    return d.month != month;
+  }
+
+  /// Returns the number of days since another date.
+  int daysSince(DateTime other) => difference(other).inDays;
+
+  /// Returns true if the date matches any in a provided list of holidays (date-only match).
+  bool isPublicHoliday(List<DateTime> holidays) =>
+      holidays.any((h) => isSameDay(h));
+
+  /// Returns the fiscal year for the date, given a custom fiscal year start month (default: April).
+  int toFiscalYear({int fiscalYearStartMonth = 4}) {
+    if (month < fiscalYearStartMonth) {
+      return year - 1;
+    } else {
+      return year;
+    }
+  }
+
+  /// Returns the next business day after this date.
+  ///
+  /// Skips weekends. Example:
+  /// ```dart
+  /// DateTime(2026, 5, 29).nextBusinessDay; // Skips to Monday if Friday
+  /// ```
+  DateTime get nextBusinessDay {
+    DateTime next = add(const Duration(days: 1));
+    while (next.isWeekend) {
+      next = next.add(const Duration(days: 1));
+    }
+    return next;
+  }
+
+  /// Returns the previous business day before this date.
+  ///
+  /// Skips weekends. Example:
+  /// ```dart
+  /// DateTime(2026, 5, 30).previousBusinessDay; // Skips to Friday if Monday
+  /// ```
+  DateTime get previousBusinessDay {
+    DateTime prev = subtract(const Duration(days: 1));
+    while (prev.isWeekend) {
+      prev = prev.subtract(const Duration(days: 1));
+    }
+    return prev;
+  }
+
+  /// Returns the number of business days until [other] (exclusive).
+  ///
+  /// Example:
+  /// ```dart
+  /// date.businessDaysUntil(otherDate); // e.g., 5
+  /// ```
+  int businessDaysUntil(DateTime other) {
+    int days = 0;
+    DateTime current = isBefore(other) ? this : other;
+    DateTime end = isBefore(other) ? other : this;
+    current = current.add(const Duration(days: 1));
+    while (current.isBefore(end)) {
+      if (current.isBusinessDay) days++;
+      current = current.add(const Duration(days: 1));
+    }
+    return days;
+  }
+
   /// Returns true if this date is the last business (weekday) day of the month.
   ///
   /// Handles all months, including leap years. A business day is Monday–Friday.
