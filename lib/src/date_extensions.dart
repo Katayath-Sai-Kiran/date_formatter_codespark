@@ -167,7 +167,7 @@ extension DateFormatterExtension on DateTime {
     final int hours = abs.inHours;
     final int days = abs.inDays;
 
-    String _label(int value, String shortUnit, String singular, String plural) {
+    String label(int value, String shortUnit, String singular, String plural) {
       if (short) return '$value$shortUnit';
       return value == 1 ? '1 $singular' : '$value $plural';
     }
@@ -175,22 +175,22 @@ extension DateFormatterExtension on DateTime {
     late final String token;
 
     if (seconds < 60) {
-      token = _label(seconds, 's', 'second', 'seconds');
+      token = label(seconds, 's', 'second', 'seconds');
     } else if (minutes < 60) {
-      token = _label(minutes, 'm', 'minute', 'minutes');
+      token = label(minutes, 'm', 'minute', 'minutes');
     } else if (hours < 24) {
-      token = _label(hours, 'h', 'hour', 'hours');
+      token = label(hours, 'h', 'hour', 'hours');
     } else if (days < 7) {
-      token = _label(days, 'd', 'day', 'days');
+      token = label(days, 'd', 'day', 'days');
     } else if (days < 30) {
       final weeks = (days / 7).floor();
-      token = _label(weeks, 'w', 'week', 'weeks');
+      token = label(weeks, 'w', 'week', 'weeks');
     } else if (days < 365) {
       final months = (days / 30).floor();
-      token = _label(months, 'mo', 'month', 'months');
+      token = label(months, 'mo', 'month', 'months');
     } else {
       final years = (days / 365).floor();
-      token = _label(years, 'y', 'year', 'years');
+      token = label(years, 'y', 'year', 'years');
     }
 
     if (isPast) {

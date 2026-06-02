@@ -21,6 +21,6 @@
 /// now.daysRemaining();       // "Today"
 /// now.hoursRemaining();      // "0 hours left"
 /// ```
-library date_formatter_codespark;
+library;
 
 export 'src/date_extensions.dart';

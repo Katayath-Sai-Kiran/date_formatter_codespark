@@ -1,9 +1,33 @@
 # date_formatter_codespark
 
-A zero-dependency, ultra-lightweight suite of intuitive `DateTime` extensions for Flutter. Bypasses the heavy initialization footprint of `intl` and the rigid functional wrapping of `timeago`.
 
-[![pub package](https://img.shields.io/pub/v/date_formatter_codespark.svg)](https://pub.dev/packages/date_formatter_codespark)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+  <a href="https://pub.dev/packages/date_formatter_codespark"><img src="https://img.shields.io/pub/v/date_formatter_codespark.svg" alt="pub version"/></a>
+  <a href="https://pub.dev/packages/date_formatter_codespark/score"><img src="https://img.shields.io/pub/points/date_formatter_codespark" alt="pub points"/></a>
+  <a href="https://pub.dev/packages/date_formatter_codespark"><img src="https://img.shields.io/pub/likes/date_formatter_codespark" alt="pub likes"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"/></a>
+  <a href="https://flutter.dev"><img src="https://img.shields.io/badge/platform-flutter-02569B?logo=flutter" alt="platform: flutter"/></a>
+  <a href="https://pub.dev/packages/date_formatter_codespark"><img src="https://img.shields.io/badge/DateTime-Extensions-indigo" alt="DateTime Extensions"/></a>
+</p>
+
+A zero-dependency, ultra-lightweight suite of intuitive `DateTime` extensions for Flutter. Bypasses the heavy initialization footprint of `intl` and the rigid functional wrapping of `timeago`. Provides a comprehensive set of semantic evaluation flags, high-frequency design layout presets, precise relative time formatting, business day logic, week/month/year utilities, and more — all with a clean, fluent API.
+
+<p align="center">
+  Built by <a href="https://ksaikiran.dev">Katayath Sai Kiran</a> · <a href="https://github.com/Katayath-Sai-Kiran">@Katayath-Sai-Kiran</a>
+</p>
+
+---
+
+## Screenshots
+
+| | |
+|:---:|:---:|
+| ![Variables & Relative Time](assets/screenshot_1.png) | ![Calendar Flags](assets/screenshot_2.png) |
+| Variables & Relative Time | Calendar Flags |
+| ![Business Day Logic](assets/screenshot_3.png) | ![Week / Month / Year Boundaries](assets/screenshot_4.png) |
+| Business Day Logic | Week / Month / Year Boundaries |
+| ![Date Math & Formatting](assets/screenshot_5.png) | ![Holiday, Fiscal & Julian Day](assets/screenshot_6.png) |
+| Date Math & Formatting | Holiday, Fiscal & Julian Day |
 
 ---
 
@@ -139,7 +163,7 @@ dateTime.toLocalOrUtc();
 Add to your `pubspec.yaml`:
 ```yaml
 dependencies:
-  date_formatter_codespark: ^1.1.0
+  date_formatter_codespark: ^1.3.0
 ```
 
 Then import:

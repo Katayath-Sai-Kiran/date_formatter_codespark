@@ -2,7 +2,7 @@ name: date_formatter_codespark
 description: >
   A zero-dependency, ultra-lightweight Flutter package providing intuitive DateTime
   extensions.
-version: 1.2.0
+version: 1.3.0
 homepage: https://ksaikiran.dev
 repository: https://github.com/Katayath-Sai-Kiran/date_formatter_codespark
 issue_tracker: https://github.com/Katayath-Sai-Kiran/date_formatter_codespark/issues
@@ -26,6 +26,20 @@ topics:
   - time
   - utilities
   - formatting
+
+screenshots:
+  - description: 'Variables & Relative Time'
+    path: assets/screenshot_1.png
+  - description: 'Calendar Flags'
+    path: assets/screenshot_2.png
+  - description: 'Business Day Logic'
+    path: assets/screenshot_3.png
+  - description: 'Week / Month / Year Boundaries'
+    path: assets/screenshot_4.png
+  - description: 'Date Math & Formatting'
+    path: assets/screenshot_5.png
+  - description: 'Holiday, Fiscal & Julian Day'
+    path: assets/screenshot_6.png
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

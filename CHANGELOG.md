@@ -1,3 +1,15 @@
+## 1.3.0 — 2026-06-02
+
+### Documentation & Presentation
+* Added pub points, pub likes, platform (Flutter), and custom "DateTime Extensions" badges to README.
+* Added author credit line to README.
+* Added a 6-image screenshots gallery section to README (captured from iPhone 15 Plus simulator).
+* Registered screenshots in `pubspec.yaml` so pub.dev displays them on the package page.
+* Renamed `aassets/` folder to `assets/` and gave screenshots clean filenames.
+* Bumped installation reference in README to `^1.3.0`.
+
+---
+
 ## 1.2.0 — 2026-05-31
 
 * Added `isMorning`, `isAfternoon`, `isEvening`, `isNight` for time-of-day checks.
