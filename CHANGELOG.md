@@ -1,3 +1,22 @@
+## 1.3.1 — 2026-06-05
+
+### SEO & Discoverability
+* Rewrote `pubspec.yaml` description with keyword-rich copy targeting pub.dev search:
+  *"date formatting, datetime formatting, relative time, time ago, human-readable dates, timestamps, custom date formats"*.
+* Replaced generic `topics` with targeted, search-optimised pub.dev topics:
+  `date-formatting`, `datetime`, `date-formatter`, `time-ago`, `datetime-extension`.
+* Added `npm-package-prompt.md` — a ready-to-use Copilot prompt for developers who
+  want to port the package to npm (`date-spark`), improving cross-ecosystem discoverability.
+
+### Code Quality
+* Fixed deprecated `withOpacity` → `withValues(alpha:)` in `example/main.dart`.
+* Removed unnecessary `library date_formatter_codespark;` name directive from barrel file.
+* Renamed private local function `_label` → `label` in `date_extensions.dart` to comply with
+  `no_leading_underscores_for_local_identifiers` lint rule.
+* `dart analyze` reports **0 issues**.
+
+---
+
 ## 1.3.0 — 2026-06-02
 
 ### Documentation & Presentation

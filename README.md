@@ -1,5 +1,14 @@
 # date_formatter_codespark
 
+A zero-dependency, ultra-lightweight date formatter and DateTime extension package for Dart and Flutter.
+
+Format dates, format DateTime values, generate human-readable dates, create relative timestamps ("5m ago"), display time ago strings, perform business day calculations, and work with weeks, months, quarters, and years through a clean, fluent API.
+
+Perfect as a lightweight alternative to intl for date formatting and a replacement for timeago when displaying relative time and human-readable timestamps.
+
+<p align="center">
+  Built by <a href="https://ksaikiran.dev">Katayath Sai Kiran</a> · <a href="https://github.com/Katayath-Sai-Kiran">@Katayath-Sai-Kiran</a>
+</p>
 
 <p align="center">
   <a href="https://pub.dev/packages/date_formatter_codespark"><img src="https://img.shields.io/pub/v/date_formatter_codespark.svg" alt="pub version"/></a>
@@ -10,13 +19,39 @@
   <a href="https://pub.dev/packages/date_formatter_codespark"><img src="https://img.shields.io/badge/DateTime-Extensions-indigo" alt="DateTime Extensions"/></a>
 </p>
 
-A zero-dependency, ultra-lightweight suite of intuitive `DateTime` extensions for Flutter. Bypasses the heavy initialization footprint of `intl` and the rigid functional wrapping of `timeago`. Provides a comprehensive set of semantic evaluation flags, high-frequency design layout presets, precise relative time formatting, business day logic, week/month/year utilities, and more — all with a clean, fluent API.
 
-<p align="center">
-  Built by <a href="https://ksaikiran.dev">Katayath Sai Kiran</a> · <a href="https://github.com/Katayath-Sai-Kiran">@Katayath-Sai-Kiran</a>
-</p>
+## Perfect For
 
----
+- Formatting dates
+- Formatting DateTime values
+- Time ago displays
+- Relative timestamps
+- Human-readable dates
+- Chat applications
+- Social feeds
+- Activity timelines
+- Notifications
+- Logs and analytics
+
+## Common Use Cases
+
+- Date formatting
+- DateTime formatting
+- Date formatter replacement
+- Intl alternative
+- Time ago formatting
+- Relative time displays
+- Relative timestamp formatting
+- Timestamp formatting
+- Human-readable timestamps
+- Chat message timestamps
+- Activity feed timestamps
+- Notification timestamps
+- Calendar applications
+- Business day calculations
+- Date utilities
+- Date extension utilities
+
 
 ## Screenshots
 
@@ -29,7 +64,15 @@ A zero-dependency, ultra-lightweight suite of intuitive `DateTime` extensions fo
 | ![Date Math & Formatting](assets/screenshot_5.png) | ![Holiday, Fiscal & Julian Day](assets/screenshot_6.png) |
 | Date Math & Formatting | Holiday, Fiscal & Julian Day |
 
----
+### Date Formatter Example
+
+```dart
+final now = DateTime.now();
+
+now.toFullHumanDate();   // Friday, 29 May, 2026
+now.toIsoDateString();   // 2026-05-29
+now.toShortDateString(); // 05/29/2026
+```
 
 ## The Token-Saving Advantage (Before vs. After)
 
@@ -79,7 +122,8 @@ dateTime.isFuture;       // true/false
 dateTime.isPast;         // true/false
 ```
 
-### Layout & Formatting Presets
+### Date Formatting & DateTime Formatter Presets
+
 ```dart
 dateTime.toDayAndMonth();     // "29 May"
 dateTime.toTime12Hour();      // "11:30 PM"
@@ -91,7 +135,7 @@ dateTime.toShortDateString(); // "05/30/2026"
 dateTime.toRfc2822String();   // "Sat, 30 May 2026 09:05:00 +0000"
 ```
 
-### Relative Time (Past & Future)
+### Relative Time & Time Ago Formatting
 ```dart
 dateTime.toTimeAgo();               // "12m ago"  (short, default)
 dateTime.toTimeAgo(short: false);   // "12 minutes ago"  (verbose)
@@ -155,8 +199,6 @@ dateTime.withTimeZoneOffset(Duration(hours: 2));
 dateTime.toLocalOrUtc();
 ```
 
----
-
 
 ## Installation
 
@@ -171,19 +213,16 @@ Then import:
 import 'package:date_formatter_codespark/date_formatter_codespark.dart';
 ```
 
----
 
 ## Zero Dependencies
 
 This package has **no external dependencies**. It does not use `intl`, `timeago`, or any other third-party package. All date formatting, locale-aware month names, and weekday strings are handled via lean, hand-crafted lookup tables internally.
 
----
 
 ## Full API Reference
 
 All extension methods are documented with concise doc comments and examples in the code. See [`lib/src/date_extensions.dart`](lib/src/date_extensions.dart) for the complete API surface.
 
----
 
 ## License
 
