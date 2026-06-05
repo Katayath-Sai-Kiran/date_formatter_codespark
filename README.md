@@ -24,8 +24,8 @@ Perfect as a lightweight alternative to intl for date formatting and a replaceme
 
 | | | |
 | :---: | :---: | :---: |
-| ![Variables & Relative Time](assets/screenshot_1.png) <br> **Variables & Relative Time** | ![Calendar Flags](assets/screenshot_2.png) <br> **Calendar Flags** | ![Business Day Logic](assets/screenshot_3.png) <br> **Business Day Logic** |
-| ![Date Math & Formatting](assets/screenshot_5.png) <br> **Date Math & Formatting** | ![Holiday, Fiscal & Julian Day](assets/screenshot_6.png) <br> **Holiday, Fiscal & Julian Day** | *(Coming Soon)* |
+| <img src="assets/screenshot_1.png" width="300"><br>**Variables & Relative Time** | <img src="assets/screenshot_2.png" width="300"><br>**Calendar Flags** | <img src="assets/screenshot_3.png" width="300"><br>**Business Day Logic** |
+| <img src="assets/screenshot_5.png" width="300"><br>**Date Math & Formatting** | <img src="assets/screenshot_6.png" width="300"><br>**Holiday, Fiscal & Julian Day** | |
 
 
 | **Perfect For**            | **Common Use Cases**          |
