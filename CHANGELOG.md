@@ -1,3 +1,9 @@
+## 1.4.0 — 2026-06-05
+
+* Updated package description in `pubspec.yaml` to: "Date formatter with DateTime extensions for date formatting, datetime formatting, relative time, time ago, human-readable dates, timestamps, and custom date formats."
+* Bumped version to `1.4.0` for a minor update focused on SEO and discoverability improvements, without any breaking changes or new features.
+* All existing APIs remain unchanged and fully compatible with previous versions.
+
 ## 1.3.1 — 2026-06-05
 
 ### SEO & Discoverability
@@ -13,7 +19,7 @@
 * Removed unnecessary `library date_formatter_codespark;` name directive from barrel file.
 * Renamed private local function `_label` → `label` in `date_extensions.dart` to comply with
   `no_leading_underscores_for_local_identifiers` lint rule.
-* `dart analyze` reports **0 issues**.
+* `dart analyze` reports **0 issues**
 
 ---
 

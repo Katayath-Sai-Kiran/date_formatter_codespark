@@ -20,49 +20,32 @@ Perfect as a lightweight alternative to intl for date formatting and a replaceme
 </p>
 
 
-## Perfect For
-
-- Formatting dates
-- Formatting DateTime values
-- Time ago displays
-- Relative timestamps
-- Human-readable dates
-- Chat applications
-- Social feeds
-- Activity timelines
-- Notifications
-- Logs and analytics
-
-## Common Use Cases
-
-- Date formatting
-- DateTime formatting
-- Date formatter replacement
-- Intl alternative
-- Time ago formatting
-- Relative time displays
-- Relative timestamp formatting
-- Timestamp formatting
-- Human-readable timestamps
-- Chat message timestamps
-- Activity feed timestamps
-- Notification timestamps
-- Calendar applications
-- Business day calculations
-- Date utilities
-- Date extension utilities
-
-
 ## Screenshots
 
 | | |
 |:---:|:---:|
-| ![Variables & Relative Time](assets/screenshot_1.png) | ![Calendar Flags](assets/screenshot_2.png) |
-| Variables & Relative Time | Calendar Flags |
-| ![Business Day Logic](assets/screenshot_3.png) | ![Week / Month / Year Boundaries](assets/screenshot_4.png) |
+| ![Variables & Relative Time](assets/screenshot_1.png) | ![Calendar Flags](assets/screenshot_2.png) | ![Business Day Logic](assets/screenshot_3.png) |
+| Variables & Relative Time | Calendar Flags | Business Day Logic |
 | Business Day Logic | Week / Month / Year Boundaries |
-| ![Date Math & Formatting](assets/screenshot_5.png) | ![Holiday, Fiscal & Julian Day](assets/screenshot_6.png) |
-| Date Math & Formatting | Holiday, Fiscal & Julian Day |
+| ![Date Math & Formatting](assets/screenshot_5.png) | ![Holiday, Fiscal & Julian Day](assets/screenshot_6.png) | ![Week / Month / Year Boundaries](assets/screenshot_4.png) |
+| Date Math & Formatting | Holiday, Fiscal & Julian Day | Week / Month / Year Boundaries |
+
+
+| **Perfect For**            | **Common Use Cases**          |
+| -------------------------- | ----------------------------- |
+| Formatting dates           | Date formatting               |
+| Formatting DateTime values | DateTime formatting           |
+| Time ago displays          | Time ago formatting           |
+| Relative timestamps        | Relative timestamp formatting |
+| Human-readable dates       | Human-readable timestamps     |
+| Chat applications          | Chat message timestamps       |
+| Social feeds               | Activity feed timestamps      |
+| Activity timelines         | Notification timestamps       |
+| Notifications              | Calendar applications         |
+| Logs and analytics         | Business day calculations     |
+|                            | Date utilities                |
+|                            | Date extension utilities      |
+
 
 ### Date Formatter Example
 
