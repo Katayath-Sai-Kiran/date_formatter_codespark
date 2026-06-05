@@ -1,3 +1,9 @@
+## 1.5.0 — 2026-06-05
+
+* Updated screenshots layout in README to a more compact 2-row grid, improving visual presentation and readability.
+* Bumped version to `1.5.0` for a minor update focused on SEO and discoverability improvements, without any breaking changes or new features.
+* All existing APIs remain unchanged and fully compatible with previous versions.
+
 ## 1.4.0 — 2026-06-05
 
 * Updated package description in `pubspec.yaml` to: "Date formatter with DateTime extensions for date formatting, datetime formatting, relative time, time ago, human-readable dates, timestamps, and custom date formats."
