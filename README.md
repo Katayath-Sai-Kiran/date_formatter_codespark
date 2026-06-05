@@ -23,7 +23,7 @@ Perfect as a lightweight alternative to intl for date formatting and a replaceme
 ## Screenshots
 
 | | |
-|:---:|:---:|
+|:---:|:---:| :---:|
 | ![Variables & Relative Time](assets/screenshot_1.png) | ![Calendar Flags](assets/screenshot_2.png) | ![Business Day Logic](assets/screenshot_3.png) |
 | Variables & Relative Time | Calendar Flags | Business Day Logic |
 | Business Day Logic | Week / Month / Year Boundaries |
