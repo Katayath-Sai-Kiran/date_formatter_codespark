@@ -22,13 +22,10 @@ Perfect as a lightweight alternative to intl for date formatting and a replaceme
 
 ## Screenshots
 
-| | |
-|:---:|:---:| :---:|
-| ![Variables & Relative Time](assets/screenshot_1.png) | ![Calendar Flags](assets/screenshot_2.png) | ![Business Day Logic](assets/screenshot_3.png) |
-| Variables & Relative Time | Calendar Flags | Business Day Logic |
-| Business Day Logic | Week / Month / Year Boundaries |
-| ![Date Math & Formatting](assets/screenshot_5.png) | ![Holiday, Fiscal & Julian Day](assets/screenshot_6.png) | ![Week / Month / Year Boundaries](assets/screenshot_4.png) |
-| Date Math & Formatting | Holiday, Fiscal & Julian Day | Week / Month / Year Boundaries |
+| | | |
+| :---: | :---: | :---: |
+| ![Variables & Relative Time](assets/screenshot_1.png) <br> **Variables & Relative Time** | ![Calendar Flags](assets/screenshot_2.png) <br> **Calendar Flags** | ![Business Day Logic](assets/screenshot_3.png) <br> **Business Day Logic** |
+| ![Date Math & Formatting](assets/screenshot_5.png) <br> **Date Math & Formatting** | ![Holiday, Fiscal & Julian Day](assets/screenshot_6.png) <br> **Holiday, Fiscal & Julian Day** | *(Coming Soon)* |
 
 
 | **Perfect For**            | **Common Use Cases**          |
