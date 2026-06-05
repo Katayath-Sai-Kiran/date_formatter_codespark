@@ -1,6 +1,6 @@
 name: date_formatter_codespark
 description: "Date formatter with DateTime extensions for date formatting, datetime formatting, relative time, time ago, human-readable dates, timestamps, and custom date formats."
-version: 1.4.0
+version: 1.5.0
 homepage: https://ksaikiran.dev
 repository: https://github.com/Katayath-Sai-Kiran/date_formatter_codespark
 issue_tracker: https://github.com/Katayath-Sai-Kiran/date_formatter_codespark/issues
