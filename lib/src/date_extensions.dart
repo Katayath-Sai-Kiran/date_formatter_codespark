@@ -453,6 +453,10 @@ extension DateFormatterExtension on DateTime {
         microsecond ?? this.microsecond,
       );
 
+  /// Returns a copy at 00:00:00.000 of the same day.
+  /// Example: DateTime(2026, 5, 30, 15, 30).startOfDay => 2026-05-30 00:00:00.000
+  DateTime get startOfDay => DateTime(year, month, day);
+
   /// Returns a copy at 23:59:59.999.
   /// Example: DateTime(2023, 1, 1).endOfDay => 2023-01-01 23:59:59.999
   DateTime get endOfDay => DateTime(year, month, day, 23, 59, 59, 999);
@@ -562,6 +566,23 @@ extension DateFormatterExtension on DateTime {
         day == lastDay;
   }
 
+  /// Returns the first day of the quarter this date falls in (same time).
+  /// Example: DateTime(2026, 5, 30).startOfQuarter => 2026-04-01
+  DateTime get startOfQuarter {
+    final firstMonth = ((quarter - 1) * 3) + 1;
+    return DateTime(
+        year, firstMonth, 1, hour, minute, second, millisecond, microsecond);
+  }
+
+  /// Returns the last day of the quarter this date falls in (same time).
+  /// Example: DateTime(2026, 5, 30).endOfQuarter => 2026-06-30
+  DateTime get endOfQuarter {
+    final lastMonth = quarter * 3;
+    final lastDay = DateTime(year, lastMonth + 1, 0).day;
+    return DateTime(
+        year, lastMonth, lastDay, hour, minute, second, millisecond, microsecond);
+  }
+
   /// Returns a copy at the start of the week (Monday).
   /// Example: DateTime(2026, 5, 30).startOfWeek => 2026-05-25
   DateTime get startOfWeek => subtract(Duration(days: weekday - 1));
@@ -625,6 +646,26 @@ extension DateFormatterExtension on DateTime {
       DateTime(
           year, month, day, hour, minute, second, millisecond, microsecond);
 
+  /// Returns a copy rounded to the nearest [minutes] interval.
+  ///
+  /// Seconds and sub-second components are zeroed out.
+  /// Useful for scheduling and calendar UIs where times snap to slots.
+  ///
+  /// ### Example
+  /// ```dart
+  /// DateTime(2026, 5, 30, 10, 13).roundToNearest(15); // 10:15
+  /// DateTime(2026, 5, 30, 10,  7).roundToNearest(15); // 10:00
+  /// DateTime(2026, 5, 30, 10, 29).roundToNearest(30); // 10:30
+  /// ```
+  DateTime roundToNearest(int minutes) {
+    assert(minutes > 0, 'minutes must be positive');
+    final totalMinutes = hour * 60 + minute;
+    final rounded = ((totalMinutes + minutes / 2) ~/ minutes) * minutes;
+    final newHour = (rounded ~/ 60) % 24;
+    final newMinute = rounded % 60;
+    return DateTime(year, month, day, newHour, newMinute);
+  }
+
   /// Returns date as MM/dd/yyyy.
   /// Example: DateTime(2026, 5, 30).toShortDateString() => '05/30/2026'
   String toShortDateString() =>
@@ -669,6 +710,73 @@ extension DateFormatterExtension on DateTime {
         b -
         1524;
     return jd;
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // SECTION 13 — Season Detection
+  // ─────────────────────────────────────────────────────────────────────────
+
+  /// Returns the meteorological season name for this date (Northern Hemisphere).
+  ///
+  /// | Months     | Season   |
+  /// |------------|----------|
+  /// | March–May  | Spring   |
+  /// | June–Aug   | Summer   |
+  /// | Sept–Nov   | Autumn   |
+  /// | Dec–Feb    | Winter   |
+  ///
+  /// ### Example
+  /// ```dart
+  /// DateTime(2026, 7, 4).season;  // "Summer"
+  /// DateTime(2026, 1, 1).season;  // "Winter"
+  /// ```
+  String get season {
+    if (month >= 3 && month <= 5) return 'Spring';
+    if (month >= 6 && month <= 8) return 'Summer';
+    if (month >= 9 && month <= 11) return 'Autumn';
+    return 'Winter';
+  }
+
+  /// Returns true if this date falls in meteorological spring (March–May).
+  bool get isSpring => month >= 3 && month <= 5;
+
+  /// Returns true if this date falls in meteorological summer (June–August).
+  bool get isSummer => month >= 6 && month <= 8;
+
+  /// Returns true if this date falls in meteorological autumn (September–November).
+  bool get isAutumn => month >= 9 && month <= 11;
+
+  /// Returns true if this date falls in meteorological winter (December–February).
+  bool get isWinter => month == 12 || month <= 2;
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // SECTION 14 — Smart Label
+  // ─────────────────────────────────────────────────────────────────────────
+
+  /// Returns a context-aware date label based on how recent the date is.
+  ///
+  /// | Scenario                | Example output   |
+  /// |-------------------------|------------------|
+  /// | Same day as today       | `"Today"`        |
+  /// | Yesterday               | `"Yesterday"`    |
+  /// | Earlier this week       | `"Monday"`       |
+  /// | Earlier this year       | `"29 May"`       |
+  /// | A different year        | `"29 May, 2024"` |
+  ///
+  /// Great for chat timestamps, activity feeds, and notification lists.
+  ///
+  /// ### Example
+  /// ```dart
+  /// DateTime.now().toSmartLabel();                               // "Today"
+  /// DateTime.now().subtract(Duration(days: 1)).toSmartLabel();  // "Yesterday"
+  /// DateTime.now().subtract(Duration(days: 3)).toSmartLabel();  // "Monday"
+  /// ```
+  String toSmartLabel() {
+    if (isToday) return 'Today';
+    if (isYesterday) return 'Yesterday';
+    if (isThisWeek) return kWeekdays[weekday];
+    if (isSameYear(DateTime.now())) return '$day ${kShortMonths[month]}';
+    return '$day ${kShortMonths[month]}, $year';
   }
 
   /// Returns a DateTime from a Julian Day number.

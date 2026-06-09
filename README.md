@@ -142,19 +142,21 @@ dateTime.copyWith(year: 2027);    // Clone with changes
 
 ### Week, Month, Quarter, Year Utilities
 ```dart
-dateTime.weekOfYear;        // ISO week number
-dateTime.quarter;           // 1-4
-dateTime.isQuarterStart;    // true/false
-dateTime.isQuarterEnd;      // true/false
-dateTime.startOfWeek;       // Monday
-dateTime.endOfWeek;         // Sunday
-dateTime.startOfMonth;      // First day
-dateTime.endOfMonth;        // Last day
-dateTime.startOfYear;       // Jan 1
-dateTime.endOfYear;         // Dec 31
-dateTime.isFirstDayOfMonth; // true/false
-dateTime.isLastDayOfMonth;  // true/false
-dateTime.daysInMonth;       // 28-31
+dateTime.weekOfYear;         // ISO week number
+dateTime.quarter;            // 1-4
+dateTime.isQuarterStart;     // true/false
+dateTime.isQuarterEnd;       // true/false
+dateTime.startOfQuarter;     // First day of quarter
+dateTime.endOfQuarter;       // Last day of quarter
+dateTime.startOfWeek;        // Monday
+dateTime.endOfWeek;          // Sunday
+dateTime.startOfMonth;       // First day of month
+dateTime.endOfMonth;         // Last day of month
+dateTime.startOfYear;        // Jan 1
+dateTime.endOfYear;          // Dec 31
+dateTime.isFirstDayOfMonth;  // true/false
+dateTime.isLastDayOfMonth;   // true/false
+dateTime.daysInMonth;        // 28-31
 dateTime.isSameDay(other);
 dateTime.isSameWeek(other);
 dateTime.isSameMonth(other);
@@ -174,18 +176,49 @@ dateTime.monthsBetween(other);    // int
 dateTime.yearsBetween(other);     // int
 dateTime.isWithin(start, end);    // true/false
 dateTime.atTime(9, 30);           // Set time
+dateTime.startOfDay;              // 00:00:00.000
 dateTime.endOfDay;                // 23:59:59.999
+dateTime.roundToNearest(15);      // Snap to nearest 15-min slot
 dateTime.withTimeZoneOffset(Duration(hours: 2));
 dateTime.toLocalOrUtc();
 ```
 
+
+### Season Detection
+
+```dart
+dateTime.season;    // "Spring" | "Summer" | "Autumn" | "Winter"
+dateTime.isSpring;  // true/false
+dateTime.isSummer;  // true/false
+dateTime.isAutumn;  // true/false
+dateTime.isWinter;  // true/false
+```
+
+### Smart Date Label
+
+```dart
+// Context-aware label — perfect for chat & feed UIs:
+DateTime.now().toSmartLabel();                              // "Today"
+DateTime.now().subtract(Duration(days: 1)).toSmartLabel(); // "Yesterday"
+DateTime.now().subtract(Duration(days: 3)).toSmartLabel(); // "Monday"
+// Earlier this year → "29 May"; older → "29 May, 2024"
+```
+
+### Round to Nearest Interval
+
+```dart
+// Snap times to scheduling slots:
+DateTime(2026, 5, 30, 10, 13).roundToNearest(15); // 2026-05-30 10:15
+DateTime(2026, 5, 30, 10,  7).roundToNearest(15); // 2026-05-30 10:00
+DateTime(2026, 5, 30, 10, 29).roundToNearest(30); // 2026-05-30 10:30
+```
 
 ## Installation
 
 Add to your `pubspec.yaml`:
 ```yaml
 dependencies:
-  date_formatter_codespark: ^1.3.0
+  date_formatter_codespark: ^1.6.0
 ```
 
 Then import:

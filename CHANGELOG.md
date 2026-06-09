@@ -1,3 +1,18 @@
+## 1.6.0 — 2026-06-10
+
+### New Features
+
+* **`startOfDay`** — Returns `00:00:00.000` of the same day; fills the natural counterpart to the existing `endOfDay`.
+* **`startOfQuarter`** — Returns the first day of the quarter this date falls in (same time-of-day preserved).
+* **`endOfQuarter`** — Returns the last day of the quarter this date falls in (same time-of-day preserved). Completes the quarter boundary suite alongside `isQuarterStart` / `isQuarterEnd`.
+* **Season detection** — Four new boolean getters (`isSpring`, `isSummer`, `isAutumn`, `isWinter`) plus a `season` string getter (`"Spring"` / `"Summer"` / `"Autumn"` / `"Winter"`). Uses meteorological seasons (Northern Hemisphere).
+* **`toSmartLabel()`** — Context-aware date label: `"Today"`, `"Yesterday"`, weekday name (e.g. `"Monday"`), short month-day (e.g. `"29 May"`), or full date with year for older dates. Ideal for chat timestamps and activity feeds.
+* **`roundToNearest(int minutes)`** — Snaps the time to the nearest N-minute slot (e.g. 15 or 30). Seconds and sub-second components are zeroed. Useful for scheduling and calendar UIs.
+
+No breaking changes. All previous APIs remain fully compatible.
+
+---
+
 ## 1.5.0 — 2026-06-05
 
 * Updated screenshots layout in README to a more compact 2-row grid, improving visual presentation and readability.
